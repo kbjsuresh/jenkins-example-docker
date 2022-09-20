@@ -1,8 +1,9 @@
 pipeline {
   agent {
-    docker { image "hello-world"
-             args "--user tenant"
-           }
+     docker {
+            image "ubuntu"
+            args "--user root"
+        }
   }
   stages {
     stage('Test') {
