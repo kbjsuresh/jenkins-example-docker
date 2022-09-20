@@ -1,11 +1,13 @@
 pipeline {
   agent {
-    docker { image 'hello-world' }
+    docker { image "hello-world"
+             args "--user root"
+           }
   }
   stages {
     stage('Test') {
       steps {
-        sh 'node --version'
+        sh "echo 'it works'"
       }
     }
   }
